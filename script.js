@@ -159,13 +159,11 @@ function openForm() {
     document.getElementById("myForm").style.display = "none";
     var name = document.getElementById('name').value;
     //var expires = "; Expires= Fri, 31 Dec 9999 23:59:59 GMT;";
-    //document.cookie = "name=" + (name || "")  +  "; Expires= Fri, 31 Dec 9999 23:59:59 GMT;";
-    document.cookie = "name=" + "test"  +  "; Expires= Fri, 31 Dec 9999 23:59:59 GMT;";
-    document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
-    console.log(document.cookie)
+    document.cookie = "name=" + (name || "")  +  "; Expires= Fri, 31 Dec 9999 23:59:59 GMT;";
   }
 
 function getCookie(name) {
+    console.log(document.cookie);
     var nameEQ = name + "=";
     var ca = document.cookie.split('; ');
     for(var i=0;i < ca.length;i++) {
