@@ -79,12 +79,10 @@ var gender = true;
 
 window.onload = function() {
     generateName(namesMen);
-    var name = getCookie('name');
+    var name = getCookie("name");
     if (name != null){
-        console.log(name)
-    }
-    else{
-        console.log(null)
+        console.log(name);
+        setName(name);
     }
 };
 
@@ -160,6 +158,7 @@ function openForm() {
     var name = document.getElementById('name').value;
     //var expires = "; Expires= Fri, 31 Dec 9999 23:59:59 GMT;";
     document.cookie = "name=" + (name || "")  +  "; Expires= Fri, 31 Dec 9999 23:59:59 GMT;";
+    setName(name);
   }
 
 function getCookie(name) {
@@ -172,4 +171,11 @@ function getCookie(name) {
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
     }
     return null;
+}
+
+function setName(name){
+    var fullName = name;
+    var username = userName(name);
+    document.getElementById("fullName").innerHTML = fullName;
+    document.getElementById("username").innerHTML = username;
 }
