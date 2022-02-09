@@ -17,7 +17,6 @@ const namesMen = [
     "Todd Lerfondler",
     "Gabe Utsecks",
     "Hugh Janus",
-    "Ray Pist",
     "Harry Anoos",
     "Hari Balsac",
     "Ped O\’Phyl",
