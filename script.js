@@ -161,7 +161,7 @@ function openForm() {
     //var expires = "; Expires= Fri, 31 Dec 9999 23:59:59 GMT;";
     //document.cookie = "name=" + (name || "")  +  "; Expires= Fri, 31 Dec 9999 23:59:59 GMT;";
     document.cookie = "name=" + "test"  +  "; Expires= Fri, 31 Dec 9999 23:59:59 GMT;";
-    document.cookie = "usernamess=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+    document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
     console.log(document.cookie)
   }
 
