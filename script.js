@@ -79,6 +79,13 @@ var gender = true;
 
 window.onload = function() {
     generateName(namesMen);
+    var name = getCookie('name');
+    if (name != null){
+        console.log(name)
+    }
+    else{
+        console.log(null)
+    }
 };
 
 var day = today.getDay();
@@ -142,4 +149,29 @@ function switchGender (){
         generateName(namesWomen);
     }
     gender = !gender;
+}
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function setCookies() {
+    document.getElementById("myForm").style.display = "none";
+    var name = document.getElementById('name').value;
+    //var expires = "; Expires= Fri, 31 Dec 9999 23:59:59 GMT;";
+    //document.cookie = "name=" + (name || "")  +  "; Expires= Fri, 31 Dec 9999 23:59:59 GMT;";
+    document.cookie = "name=" + "test"  +  "; Expires= Fri, 31 Dec 9999 23:59:59 GMT;";
+    document.cookie = "usernamess=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC";
+    console.log(document.cookie)
+  }
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split('; ');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
 }
